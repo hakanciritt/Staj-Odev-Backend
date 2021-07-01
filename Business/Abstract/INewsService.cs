@@ -15,5 +15,6 @@ namespace Business.Abstract
         IDataResult<List<News>> GetAll();
         IDataResult<News> GetById(int newsId);
         IDataResult<List<NewsDetailDto>> GetNewsDetails();
+        IDataResult<NewsDetailDto> GetNewsDetail(int newsId);
     }
 }

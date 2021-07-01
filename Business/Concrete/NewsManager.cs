@@ -18,6 +18,7 @@ namespace Business.Concrete
         {
             _newsDal = newsDal;
         }
+
         public IResult Add(News news)
         {
             ValidationTool.Validate(new NewsValidator(), news);
@@ -27,7 +28,8 @@ namespace Business.Concrete
 
         public IResult Delete(News news)
         {
-            throw new NotImplementedException();
+            _newsDal.Delete(news);
+            return new SuccessResult(Messages.NewsDeleted);
         }
 
         public IDataResult<List<News>> GetAll()
@@ -40,6 +42,11 @@ namespace Business.Concrete
             return new SuccessDataResult<News>(_newsDal.Get(x => x.Id == newsId));
         }
 
+        public IDataResult<NewsDetailDto> GetNewsDetail(int newsId)
+        {
+            return new SuccessDataResult<NewsDetailDto>(_newsDal.GetNewsDetail(x=>x.Id==newsId));
+        }
+
         public IDataResult<List<NewsDetailDto>> GetNewsDetails()
         {
             return new SuccessDataResult<List<NewsDetailDto>>(_newsDal.GetNewsDetails());
@@ -47,7 +54,8 @@ namespace Business.Concrete
 
         public IResult Update(News news)
         {
-            throw new NotImplementedException();
+            _newsDal.Update(news);
+            return new SuccessResult(Messages.NewsUpdated);
         }
     }
 }

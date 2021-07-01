@@ -29,7 +29,7 @@ namespace Business.Concrete
 
         public IResult Delete(Category category)
         {
-            throw new NotImplementedException();
+            return new SuccessResult(Messages.CategoryDeleted);
         }
 
         public IDataResult<List<Category>> GetAll()
@@ -44,7 +44,8 @@ namespace Business.Concrete
 
         public IResult Update(Category category)
         {
-            throw new NotImplementedException();
+            _categoryDal.Update(category);
+            return new SuccessResult(Messages.CategoryUpdated);
         }
     }
 }
