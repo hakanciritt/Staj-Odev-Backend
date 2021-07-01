@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _newsService.GetAll();
+            var result = _newsService.GetNewsDetails();
             if (result.Success)
             {
                 return Ok(result);

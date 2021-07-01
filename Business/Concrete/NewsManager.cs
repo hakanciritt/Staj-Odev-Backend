@@ -4,6 +4,7 @@ using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -37,6 +38,11 @@ namespace Business.Concrete
         public IDataResult<News> GetById(int newsId)
         {
             return new SuccessDataResult<News>(_newsDal.Get(x => x.Id == newsId));
+        }
+
+        public IDataResult<List<NewsDetailDto>> GetNewsDetails()
+        {
+            return new SuccessDataResult<List<NewsDetailDto>>(_newsDal.GetNewsDetails());
         }
 
         public IResult Update(News news)
