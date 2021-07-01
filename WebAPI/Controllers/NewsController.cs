@@ -40,5 +40,37 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _newsService.GetNewsDetail(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("update")]
+        public IActionResult Update(News news)
+        {
+            var result = _newsService.Update(news);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("delete")]
+        public IActionResult Delete(News news)
+        {
+            var result = _newsService.Delete(news);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+
     }
 }

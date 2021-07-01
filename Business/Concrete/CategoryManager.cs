@@ -20,15 +20,14 @@ namespace Business.Concrete
         }
         public IResult Add(Category category)
         {
-
             ValidationTool.Validate(new CategoryValidator(), category);
-
             _categoryDal.Add(category);
             return new SuccessResult(Messages.CategoryAdded);
         }
 
         public IResult Delete(Category category)
         {
+            _categoryDal.Delete(category);
             return new SuccessResult(Messages.CategoryDeleted);
         }
 
