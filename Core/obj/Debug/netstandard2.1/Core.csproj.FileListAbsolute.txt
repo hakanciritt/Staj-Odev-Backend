@@ -1,0 +1,9 @@
+C:\Users\hakan\source\repos\NewsProject\Core\bin\Debug\netstandard2.1\Core.deps.json
+C:\Users\hakan\source\repos\NewsProject\Core\bin\Debug\netstandard2.1\Core.dll
+C:\Users\hakan\source\repos\NewsProject\Core\bin\Debug\netstandard2.1\Core.pdb
+C:\Users\hakan\source\repos\NewsProject\Core\obj\Debug\netstandard2.1\Core.csprojAssemblyReference.cache
+C:\Users\hakan\source\repos\NewsProject\Core\obj\Debug\netstandard2.1\Core.AssemblyInfoInputs.cache
+C:\Users\hakan\source\repos\NewsProject\Core\obj\Debug\netstandard2.1\Core.AssemblyInfo.cs
+C:\Users\hakan\source\repos\NewsProject\Core\obj\Debug\netstandard2.1\Core.csproj.CoreCompileInputs.cache
+C:\Users\hakan\source\repos\NewsProject\Core\obj\Debug\netstandard2.1\Core.dll
+C:\Users\hakan\source\repos\NewsProject\Core\obj\Debug\netstandard2.1\Core.pdb
