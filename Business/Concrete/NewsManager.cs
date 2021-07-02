@@ -50,7 +50,7 @@ namespace Business.Concrete
 
         public IDataResult<NewsDetailDto> GetNewsDetail(int newsId)
         {
-            return new SuccessDataResult<NewsDetailDto>(_newsDal.GetNewsDetail(x=>x.Id==newsId));
+            return new SuccessDataResult<NewsDetailDto>(_newsDal.GetNewsDetail(x => x.Id == newsId));
         }
 
         public IDataResult<List<NewsDetailDto>> GetNewsDetails()
@@ -65,7 +65,7 @@ namespace Business.Concrete
         }
         private IResult CheckIfNewsExists(News news)
         {
-            if (_newsDal.Get(x=>x.Title==news.Title && x.Date==news.Date)!=null)
+            if (_newsDal.Get(x => x.Title == news.Title && x.Date == news.Date) != null)
             {
                 return new ErrorResult(Messages.ThereIsAlreadyExists);
             }

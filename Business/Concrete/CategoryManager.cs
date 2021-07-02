@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.ValidationRules.FluentValidation;
 using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -21,6 +22,11 @@ namespace Business.Concrete
         public IResult Add(Category category)
         {
             ValidationTool.Validate(new CategoryValidator(), category);
+            IResult result = BusinessRules.Run(CheckIfCategoryExists(category.Name));
+            if (result != null)
+            {
+                return result;
+            }
             _categoryDal.Add(category);
             return new SuccessResult(Messages.CategoryAdded);
         }
@@ -45,6 +51,14 @@ namespace Business.Concrete
         {
             _categoryDal.Update(category);
             return new SuccessResult(Messages.CategoryUpdated);
+        }
+        private IResult CheckIfCategoryExists(string categoryName)
+        {
+            if (_categoryDal.Get(x => x.Name == categoryName) != null)
+            {
+                return new ErrorResult();
+            }
+            return null;
         }
     }
 }
