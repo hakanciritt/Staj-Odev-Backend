@@ -29,8 +29,18 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _categoryService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
         [HttpPost("add")]
-        public IActionResult Add(Category category)
+        public IActionResult Add([FromBody] Category category)
         {
             var result = _categoryService.Add(category);
             if (result.Success)
@@ -50,7 +60,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPost("update")]
-        public IActionResult Update(Category category)
+        public IActionResult Update([FromBody] Category category)
         {
             var result = _categoryService.Update(category);
             if (result.Success)

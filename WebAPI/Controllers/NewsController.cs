@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -31,7 +32,7 @@ namespace WebAPI.Controllers
 
         }
         [HttpPost("add")]
-        public IActionResult Add(News news)
+        public IActionResult Add([FromBody]News news)
         {
             var result = _newsService.Add(news);
             if (result.Success)
@@ -51,7 +52,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPost("update")]
-        public IActionResult Update(News news)
+        public IActionResult Update([FromBody] News news)
         {
             var result = _newsService.Update(news);
             if (result.Success)

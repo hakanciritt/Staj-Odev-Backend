@@ -12,6 +12,7 @@ namespace Business
         public const string NewsUpdated = "Haber güncellendi";
         public const string CategoryDeleted = "Kategori silindi";
         public const string CategoryUpdated = "Kategori güncellendi";
+        public const string ThereIsAlreadyExists = "Haber mevcut";
 
     }
 }
