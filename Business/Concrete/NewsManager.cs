@@ -67,7 +67,7 @@ namespace Business.Concrete
         {
             if (_newsDal.Get(x => x.Title == news.Title && x.Date == news.Date) != null)
             {
-                return new ErrorResult(Messages.ThereIsAlreadyExists);
+                return new ErrorResult(Messages.NewsAlreadyExists);
             }
             return null;
         }
