@@ -40,7 +40,7 @@ namespace Business.Concrete
 
         public IDataResult<List<News>> GetAll()
         {
-            return new SuccessDataResult<List<News>>(_newsDal.GetAll());
+            return new SuccessDataResult<List<News>>();
         }
 
         public IDataResult<News> GetById(int newsId)
